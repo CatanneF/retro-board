@@ -5,7 +5,7 @@ import Board from "../board/Board"
 function Retroboard() {
 
     const[title, setTitle] = useState("");
-
+    
     return(
         <>
             <Navbar 
