@@ -4,9 +4,36 @@ body {
     right: 0;
 }
 
+.settings {
+    display: flex;
+    justify-content: left;
+    align-items: start;
+    background-color: var(--drk-green);
+    height: 30px;
+    
+}
+
+.layout {
+    margin-top: 0;
+    padding: 3px 20px;
+    color: var(--pink);
+}
+
+.view-btn {
+    padding: 1px 10px;
+    background-color: var(--black);
+    color: var(--white);
+    height: 30px;
+}
+
+.view-btn:hover {
+    background-color: var(--grey);
+    color: var(--white);
+}
+
 .title {
     display: block;
-    margin: 100px auto 50px;
+    margin: 50px auto;
     text-align: center;
     min-width: 300px;
     font-family: "Neuton", sans-serif;
@@ -26,16 +53,22 @@ input {
     width: 85vw;
     background-color: var(--tan); 
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     margin: auto;
     border-radius: 10px;
-    padding: 10px;
-    
+    padding: 10px;    
+}
+
+.flex-column {
+    flex-direction: column;
+    max-width: 800px;
+}
+
+.flex-row {
+    flex-direction: row;
 }
 
 .Row {
-    /* background-color: var(--green); */
     flex: 1;
     margin: 40px;
     min-width: 300px;
@@ -109,9 +142,9 @@ button:hover {
     color: var(--white);
 }
 
-.item:hover {
+/* .item:hover {
     cursor: move;
-}
+} */
 
 textarea {
     display: block;
@@ -150,6 +183,12 @@ button {
     border-radius: 2px;
     font-size: .9em
 
+}
+
+.arrow-btn {
+    font-weight: 800;
+    margin: 0px 20px;
+    padding: 2px 10px;
 }
 
 .is-dragging {

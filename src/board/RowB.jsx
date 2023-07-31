@@ -6,20 +6,19 @@ import PropTypes from "prop-types";
 
 
 function RowB(props)  {
-    const [actionItems, setActionItems] = useState([{task: "", status: "rowB"}]);
+    const [taskItems, settaskItems] = useState([{task: "", status: "rowB"}]);
    
     const newItem = () => {
-        setActionItems([...actionItems, { task: ""}]);
+        settaskItems([...taskItems, { task: ""}]);
     };
     const updateItem = (userInput, index) => {
-        props.setNewTask(userInput);
-        const newActions = [...actionItems];
+        const newActions = [...taskItems];
         newActions[index] = { task: userInput };
-        setActionItems(newActions);
+        settaskItems(newActions);
     };
     const deleteItem = (index) => {
-        setActionItems(
-            actionItems.filter((item, currentIndex) => currentIndex !== index)
+        settaskItems(
+            taskItems.filter((item, currentIndex) => currentIndex !== index)
         );
     };
 
@@ -29,7 +28,7 @@ function RowB(props)  {
                 <h2>{props.header}</h2>
                 <button className="add-row" onClick={newItem}>+</button>
             </div>
-            {actionItems.map((item, index) => {
+            {taskItems.map((item, index) => {
                 const { task } = item;
                     return (
                         <div key={`action-item-${index}`} className={props.row}>
@@ -40,11 +39,11 @@ function RowB(props)  {
                                 aria-label="Enter task here ..."
                                 onChange={(e) => updateItem(e.target.value, index)}
                             />
-                            <button>L</button>
+                            <button className="arrow-btn">⇦</button>
                             <button className="deletebtn" onClick={() => deleteItem(index)}>
                                 X
                             </button>
-                            <button>R</button>
+                            <button className="arrow-btn">⇨</button>
                         </div>
 
                     )
@@ -57,8 +56,8 @@ function RowB(props)  {
 
 };
 
-RowB.propTypes = {
-    setNewTask: PropTypes.func.isRequired
-}
+// RowB.propTypes = {
+//     setNewTask: PropTypes.func.isRequired
+// }
 
 export default RowB;

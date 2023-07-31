@@ -6,20 +6,20 @@ import PropTypes from "prop-types";
 
 
 function RowC(props)  {
-    const [actionItems, setActionItems] = useState([{task: "", status: "rowC"}]);
+    const [taskItems, settaskItems] = useState([{task: "", status: "rowC"}]);
    
     const newItem = () => {
-        setActionItems([...actionItems, { task: "", status: "rowC"}]);
+        settaskItems([...taskItems, { task: "", status: "rowC"}]);
     };
     const updateItem = (userInput, index) => {
-        props.setNewTask(userInput);
-        const newActions = [...actionItems];
+       
+        const newActions = [...taskItems];
         newActions[index] = { task: userInput };
-        setActionItems(newActions);
+        settaskItems(newActions);
     };
     const deleteItem = (index) => {
-        setActionItems(
-            actionItems.filter((item, currentIndex) => currentIndex !== index)
+        settaskItems(
+            taskItems.filter((item, currentIndex) => currentIndex !== index)
         );
     };
 
@@ -35,9 +35,9 @@ function RowC(props)  {
                 <h2>{props.header}</h2>
                 <button className="add-row" onClick={newItem}>+</button>
             </div>
-            {actionItems.map((item, index) => {
+            {taskItems.map((item, index) => {
                 const { task } = item;
-                if(item && item.status==='RowC')
+                // if(item && item.status==='RowC')
                     return (
                         <div key={`action-item-${index}`} className={props.row}>
                             <textarea 
@@ -48,11 +48,11 @@ function RowC(props)  {
                                 onChange={(e) => updateItem(e.target.value, index)}
                                 
                             />
-                            <button onClick={()=>{updateStatus(newTask.id,'RowB')}}>L</button>
+                            <button className="arrow-btn">⇦</button>
                             <button className="deletebtn" onClick={() => deleteItem(index)}>
                                 X
                             </button>
-                            <button onClick={()=>{updateStatus(newTask.id,'RowA')}}>R</button>
+                            <button className="arrow-btn">⇨</button>
                         </div>
 
                     )
@@ -65,8 +65,8 @@ function RowC(props)  {
 
 };
 
-RowC.propTypes = {
-    setNewTask: PropTypes.func.isRequired
-}
+// RowC.propTypes = {
+//     setNewTask: PropTypes.func.isRequired
+// }
 
 export default RowC;
