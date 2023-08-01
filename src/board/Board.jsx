@@ -8,9 +8,7 @@ import PropTypes from "prop-types";
 
 function Board(props) {
     
-    //const[newTask, setNewTask] = useState("")
     const[isActive, setisActive] = useState("false");
-
     const ToggleLayoutH = () => {
         setisActive(true)
     }

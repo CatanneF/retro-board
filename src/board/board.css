@@ -74,8 +74,7 @@ input {
     min-width: 300px;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    
+    text-align: center;   
 }
 
 .Header {
@@ -142,10 +141,6 @@ button:hover {
     color: var(--white);
 }
 
-/* .item:hover {
-    cursor: move;
-} */
-
 textarea {
     display: block;
     overflow-wrap: break-word;
@@ -165,7 +160,6 @@ textarea {
     height: auto;
 }
 
-
 textarea:focus{
     outline: 1px solid var(--white);
 }
@@ -182,7 +176,6 @@ button {
     padding: 5px 10px;
     border-radius: 2px;
     font-size: .9em
-
 }
 
 .arrow-btn {

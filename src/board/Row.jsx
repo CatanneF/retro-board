@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "../board/board.css"
 import '../App.css'
-// import PropTypes from "prop-types";
 
 
 function Row(props)  {
@@ -44,10 +43,10 @@ function Row(props)  {
                             </button>
                             <button className="arrow-btn">⇨</button>
                         </div>
-                    )
-            })}
+                    );
+            })};
         </div>  
-    )
+    );
 };
 
 

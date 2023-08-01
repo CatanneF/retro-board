@@ -1,7 +1,7 @@
 # Retro Board
 ### Created by Catherine Felton
 
-This is a retrospective board inspired by those used in Scrum workflows.  
+This is a retrospective board inspired by those used in Scrum workflows.  It allows users to add tasks to Task Boxes that can be sorted into 3 categories: Went Well, To Imporove, and Action Items to reflect the stage of a project a task is currently in.
 ## Features:
 + An option to rename the board where the "Utitled Board" placeholder is found
 + Three task columns:  Went Well, To Imporove, and Action Items
