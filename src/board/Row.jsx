@@ -43,8 +43,8 @@ function Row(props)  {
                             </button>
                             <button className="arrow-btn">⇨</button>
                         </div>
-                    );
-            })};
+                    )
+            })}
         </div>  
     );
 };
