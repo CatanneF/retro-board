@@ -16,17 +16,15 @@ function Row({tasks, taskItems, settaskItems, category, header, row})  {
         const updateItems = taskItems.map((taskItem) => {
             if (taskItem.id === item.id) {
             taskItem = { task: userInput, category: item.category, id: item.id };     
-        };
-        return taskItem;   
+            };
+            return taskItem;   
         });
         settaskItems(updateItems);
     };
 
     const deleteItem = (item) => {
-        console.log(item.id)
         const toDelete = item.id;
         const newTaskItems = taskItems.filter(currentId => !toDelete.includes( currentId.id ));
-        console.log(newTaskItems)
         settaskItems(newTaskItems);
        
     }; 
@@ -34,23 +32,14 @@ function Row({tasks, taskItems, settaskItems, category, header, row})  {
 
     const moveItemLeft = (item) => {
         if (item.category === "row A") {
-            // const newTask = {...item};
-            // newTask.category = "row C";
-            //  console.log(item)
             const updateItems = taskItems.map((taskItem) => {
                 if (taskItem.id === item.id) {
-                    taskItem.category = "row C"; 
-                     
-                }
-                // const itemIndex = taskItems.indexOf(taskItem);
-                // const toIndex = taskItems.length -1
-                // const getItem = taskItems.splice(itemIndex, 1)[0];
-                // taskItems.splice(toIndex, 0, getItem);
-                  
+                    taskItem.category = "row C";      
+                }  
                 return taskItem;   
             })
             settaskItems(updateItems);
-        }else if (item.category === "row B") {
+        } else if (item.category === "row B") {
             const updateItems = taskItems.map((taskItem) => {
                 if (taskItem.id === item.id) {
                     taskItem.category = "row A";
@@ -58,7 +47,7 @@ function Row({tasks, taskItems, settaskItems, category, header, row})  {
                 return taskItem;   
             });
             settaskItems(updateItems);
-        }else {
+        } else {
             const updateItems = taskItems.map((taskItem) => {
                 if (taskItem.id === item.id) {
                     taskItem.category = "row B";
@@ -78,7 +67,7 @@ function Row({tasks, taskItems, settaskItems, category, header, row})  {
                 return taskItem;   
             });
             settaskItems(updateItems);
-        }else if (item.category === "row B") {
+        } else if (item.category === "row B") {
             const updateItems = taskItems.map((taskItem) => {
                 if (taskItem.id === item.id) {
                     taskItem.category = "row C";
@@ -87,7 +76,7 @@ function Row({tasks, taskItems, settaskItems, category, header, row})  {
                 return taskItem;   
             });
             settaskItems(updateItems);
-        }else {
+        } else {
             const updateItems = taskItems.map((taskItem) => {
                 if (taskItem.id === item.id) {
                     taskItem.category = "row A";

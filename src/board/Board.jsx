@@ -17,7 +17,6 @@ function Board(props) {
     }
 
 // Array of tasks
-
     const [taskItems, settaskItems] = useState([{task: "", category:"row A", id:"one"}, {task: "", category:"row B", id: "two"}, {task: "", category:"row C", id: "three"}]);
 
     const rowA = taskItems.filter((taskItem) => taskItem.category === "row A");
